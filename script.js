@@ -218,8 +218,8 @@ gliderFactoryBtn.addEventListener('click', () => spawnConstruct(constructs.glide
 
 // Event listeners for keys
 document.addEventListener('keydown', (event) => {
-    event.preventDefault();
     if (event.key === ' ') {
+        event.preventDefault();
         simulationRunning ? stopSimulation() : startSimulation();
     }
 });
