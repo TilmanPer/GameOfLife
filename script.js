@@ -8,7 +8,7 @@ const showGridButton = document.getElementById('showGridBtn');
 const genCounter = document.getElementById('generation');
 const populationCounter = document.getElementById('population');
 const showMoreBtn = document.getElementById('showMoreBtn');
-const expandableContent = document.getElementById('expandable');
+const expandableContent = document.getElementById('showMoreBtn');
 const speedSlider = document.getElementById('speedSlider');
 
 const gliderBtn = document.getElementById('gliderBtn');
@@ -23,12 +23,14 @@ let cells = [];
 let timer;
 let simulationRunning = false;
 let fieldSize = 65;
+let cellSize = "20px";
 let generation = 0;
 let speed = 100;
 
 document.addEventListener('DOMContentLoaded', () => {
-    gridContainer.style.gridTemplateColumns = `repeat(${fieldSize}, 20px)`;
-    gridContainer.style.gridTemplateRows = `repeat(${fieldSize}, 20px)`;
+    window.addEventListener('resize', () => {
+        createGrid();
+    });
 });
 
 function fillRandom() {
@@ -44,6 +46,20 @@ function fillRandom() {
 }
 
 function createGrid() {
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.remove();
+    });
+    cells = [];
+    // Calculate the new field size
+    cellSizeNumber = parseInt(cellSize.match(/\d+/)[0]);
+    if (window.innerWidth > window.innerHeight) {
+        fieldSize = Math.floor(window.innerHeight / cellSizeNumber - 1);
+    } else {
+        fieldSize = Math.floor(window.innerWidth / cellSizeNumber - 1);
+    }
+    gridContainer.style.gridTemplateColumns = `repeat(${fieldSize}, ${cellSize})`;
+    gridContainer.style.gridTemplateRows = `repeat(${fieldSize}, ${cellSize})`;
+
     for (let i = 0; i < fieldSize; i++) {
         let row = [];
         for (let j = 0; j < fieldSize; j++) {

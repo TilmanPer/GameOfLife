@@ -4,9 +4,7 @@
 <head>
     <title>Conway's Game of Life</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 </head>
@@ -26,7 +24,7 @@
         </li>
     </ul>
 
-    <div class="controls">
+    <div id="controls" class="controls">
         <div class="control-section">
             <button id="startBtn">START</button>
             <button id="stopBtn">STOP</button>
@@ -37,7 +35,7 @@
             <input type="range" id="speedSlider" min="1" max="500" value="100" oninput="changeSpeed()">
             <button id="showGridBtn">GRID</button>
         </div>
-        <div id="expandable" class="expandable">
+        <div id="showMoreBtn" class="expandable">
             <div class="control-section">
                 <button id="gliderBtn">GLIDER</button>
                 <button id="pulsarBtn">PULSAR</button>
@@ -53,7 +51,6 @@
         </div>
         <button id="showMoreBtn">show more</button>
     </div>
-
     <script src="contructs.js"></script>
     <script src="script.js"></script>
 </body>

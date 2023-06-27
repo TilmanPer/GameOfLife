@@ -31,7 +31,6 @@ body {
 }
 
 #game-container {
-  margin-bottom: 20px;
 }
 
 #grid {
@@ -84,6 +83,22 @@ body {
   display: inline;
 }
 
+#showControlsBtn {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 20px;
+  padding: 0;
+  height: 50px;
+  opacity: 0.5;
+}
+
+#showControlsBtn:hover {
+  opacity: 1;
+}
+
 .controls {
   display: flex;
   flex-direction: column;
@@ -97,6 +112,11 @@ body {
   position: absolute;
   left: 0;
   top: 40%;
+}
+
+.show-top {
+  top: 0;
+  bottom: auto;
 }
 
 .control-section {
