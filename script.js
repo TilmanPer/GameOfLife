@@ -8,7 +8,7 @@ const showGridButton = document.getElementById('showGridBtn');
 const genCounter = document.getElementById('generation');
 const populationCounter = document.getElementById('population');
 const showMoreBtn = document.getElementById('showMoreBtn');
-const expandableContent = document.getElementById('showMoreBtn');
+const expandableContent = document.getElementById('showMoreContent');
 const speedSlider = document.getElementById('speedSlider');
 
 const gliderBtn = document.getElementById('gliderBtn');
@@ -207,8 +207,6 @@ function changeSpeed() {
     stopSimulation();
     startSimulation();
 }
-
-
 
 function spawnConstruct(construct) {
     construct.forEach(cell => {
