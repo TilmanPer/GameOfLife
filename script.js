@@ -68,7 +68,12 @@ function createGrid() {
             cell.addEventListener('mousedown', toggleCellState);
             //drag and draw
             cell.addEventListener('mouseover', (event) => {
-                if (event.buttons === 1) {
+                //only draw on left click
+                if (event.buttons === 1 && !event.target.classList.contains('alive')) {
+                    toggleCellState(event);
+                }
+                //only erase on right click
+                if (event.buttons === 2 && event.target.classList.contains('alive')) {
                     toggleCellState(event);
                 }
             });

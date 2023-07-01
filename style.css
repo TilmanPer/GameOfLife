@@ -177,6 +177,7 @@ input[type="range"] {
   outline: none;
   opacity: 0.7;
   transition: opacity 0.3s;
+  border-radius: 0;
 }
 
 input[type="range"]::-moz-range-thumb,
